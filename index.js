@@ -48,23 +48,36 @@ const questions = [{
 }];
 
 
-
-
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+          return console.log(err);
+        }
+
+        console.log("Your README is ready")
+    });
 }
+const writeFileAsync = util.promisify(writeToFile);
 
 // function to initialize program
-function init() {
+async function init() {
+    try {
 
-}
+        // Prompt Inquirer questions
+        const data = await inquirer.prompt(questions);
+        console.log("Your answers: ", data);
+
+        const markdown = generateMarkdown(data);
+        console.log(markdown);
+
+        // Write markdown to file
+        await writeFileAsync('app_folder/README.md', markdown);
+
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 // function call to initialize program
 init();
-
-
-
-
-
-
-
