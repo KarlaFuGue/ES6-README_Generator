@@ -37,13 +37,14 @@ To run this project:
 
 #### Test
 
-![image]({utils/Screenshot 2023-05-09 at 23.12.16.png})
+![image][def]
 
 
 ### Technologies
 - JS
 - JSON
 - Node
+- NPM
 
 ### Credits
 Karla Fuentes:
@@ -64,3 +65,6 @@ https://www.linkedin.com/in/karla-f-051392196?original_referer=
 
 
 
+
+
+[def]: {utils/ScreenshotREADME.png}
